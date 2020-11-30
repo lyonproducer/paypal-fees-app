@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Comisiones PayPal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div id="container">
+    
+    <h5 class="title">Calcular comisión para recibir</h5>
+
+    <ion-card>
+      <span>
+        {{percentage}} % + {{feeFixed}} USD
+      </span>
+    </ion-card>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Comisión para:</ion-label>
+        <ion-select [(ngModel)]="selectedCountry" (ionChange)="changeSelect()">
+          <ion-select-option value="Latinoamerica">Latinoamerica</ion-select-option>
+          <ion-select-option value="usa">Estados Unidos</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div style="margin-top: 20px;">
+      <ion-item id="rounded">
+        <ion-label fixed>Para Recibir:</ion-label>
+        <ion-input type="number" name="email" [(ngModel)]="toRecieve" required (ionChange)="calculate()"></ion-input>
+      </ion-item>
+
+      <ion-item id="rounded">
+        <ion-label fixed>Hay que enviar:</ion-label>
+        <ion-input type="number" name="password" [(ngModel)]="toSend" required disabled></ion-input>
+      </ion-item>
+    </div>
+
+
+  </div>
+</ion-content>
