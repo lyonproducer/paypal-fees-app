@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>information-app</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Comisiones PayPal</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
 
+
+  <div id="container">
+    
+    <h5 class="title">Información de uso</h5>
+
+    <ion-card>
+      <p>
+        Selecciona desde el menu lateral la opción que deseas calcular, ya sea para recibir o para enviar. Una vez seleccionada ingresas los montos y obtendrás tu resultado en pantalla.
+      </p>
+
+      <p>
+        Por defecto colocamos los valores estándar de las comisiones de PayPal que son 5,4% + un fijo de 0,3 USD por transacción(*). Revisa si tu país tiene una comisión distinta y colócala haciendo clic en el país, donde dice "Comisión para".
+      </p>
+
+      <p>  A modo de ejemplo colocamos al final de cada cuadro USDs (Dólares), pero la calculadora de comisiones funciona de igual manera si es cualquier moneda, como Euros, Yenes, Libras Esterlinas, Francos, etc.</p>
+      
+    </ion-card>
+
+  </div>
 </ion-content>

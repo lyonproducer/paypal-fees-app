@@ -12,7 +12,45 @@
 
   <div id="container">
     
+    <h5 class="title">Calcular comisión para recibir</h5>
 
+    <ion-card>
+      <span>
+        {{percentage}} % + {{feeFixed}} USD
+      </span>
+    </ion-card>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Comisión para:</ion-label>
+        <ion-select [(ngModel)]="selectedCountry" (ionChange)="changeSelect()">
+          <ion-select-option value="Latinoamerica">Latinoamerica</ion-select-option>
+          <ion-select-option value="usa">Estados Unidos</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div style="margin-top: 20px;">
+      <ion-item id="rounded">
+        <ion-label fixed>Si envias:</ion-label>
+        <ion-input class="number" type="number" name="email" [(ngModel)]="toSend" required (ionChange)="calculate()"></ion-input>
+      </ion-item>
+
+      <ion-item id="rounded">
+        <ion-label fixed>Se recibe:</ion-label>
+        <ion-label slot="end" class="number">{{toRecieve}}</ion-label>
+        <!-- <ion-input class="number" type="number" name="password" [(ngModel)]="toRecieve" required disabled></ion-input> -->
+      </ion-item>
+
+      <ion-item id="rounded" color="primary">
+        <ion-label fixed style="color: white;;">Comisión:</ion-label>
+        <ion-label slot="end" class="number">{{comission}}</ion-label>
+      </ion-item>
+    </div>
+
+    <h6 class="clean" (click)="clean()">
+      Limpiar Campos
+    </h6>
 
   </div>
 </ion-content>

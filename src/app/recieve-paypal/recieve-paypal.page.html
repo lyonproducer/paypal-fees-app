@@ -33,15 +33,23 @@
     <div style="margin-top: 20px;">
       <ion-item id="rounded">
         <ion-label fixed>Para Recibir:</ion-label>
-        <ion-input type="number" name="email" [(ngModel)]="toRecieve" required (ionChange)="calculate()"></ion-input>
+        <ion-input class="number" type="number" name="email" [(ngModel)]="toRecieve" required (ionChange)="calculate()"></ion-input>
       </ion-item>
 
       <ion-item id="rounded">
         <ion-label fixed>Hay que enviar:</ion-label>
-        <ion-input type="number" name="password" [(ngModel)]="toSend" required disabled></ion-input>
+        <ion-label slot="end" class="number">{{toSend}}</ion-label>
+        <!-- <ion-input class="number" type="number" name="password" [(ngModel)]="toSend" required disabled></ion-input> -->
+      </ion-item>
+
+      <ion-item id="rounded" color="primary">
+        <ion-label fixed style="color: white;;">Comisión:</ion-label>
+        <ion-label slot="end" class="number">{{comission}}</ion-label>
       </ion-item>
     </div>
 
-
+    <h6 class="clean" (click)="clean()">
+      Limpiar Campos
+    </h6>
   </div>
 </ion-content>

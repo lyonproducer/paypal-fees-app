@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsPage implements OnInit {
 
-  constructor() { }
+  constructor(private iab: InAppBrowser) { }
 
   ngOnInit() {
   }
 
+
+  
+  open(url){
+    const browser = this.iab.create(url);
+  }
 }

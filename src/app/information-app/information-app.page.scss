@@ -1,0 +1,50 @@
+
+
+
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+
+#container a {
+    text-decoration: none;
+}
+
+// ion-header{
+//     --border-width: 0 0 0px !important;
+// }
+
+
+// ion-menu-button {
+//     color: black !important;
+// }
+
+ion-content{
+    padding: 30px;
+    --padding-bottom: 30px;
+    --padding-end	: 30px;
+    --padding-start	: 30px;
+    --padding-top :10px;
+}
+
+.title{
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #757575;
+    font-weight: bold;
+}
+
+.clean{
+    text-align: center;
+    font-weight: bold;
+    color: #0070BA;
+    margin-top: 25px;
+}
+
+ion-card{
+    text-align: justify;
+    font-size: 13px;
+    padding: 25px;
+}
+

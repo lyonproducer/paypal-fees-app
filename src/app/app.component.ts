@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -13,24 +13,20 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Calcular comisión para enviar',
+      title: 'Calcular comisión para recibir',
       url: '/recieve-paypal'
     },
     {
-      title: 'Calcular comisión para recibir',
-      url: 'send-paypal'
+      title: 'Calcular comisión para enviar',
+      url: '/send-paypal'
     },
     {
       title: 'Información de uso',
-      url: '/folder/Favorites'
+      url: '/information-app'
     },
     {
       title: 'Contáctanos',
-      url: '/folder/Archived'
-    },
-    {
-      title: 'Donaciones',
-      url: '/folder/Trash'
+      url: 'contact-us'
     },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
@@ -38,7 +34,8 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private iab: InAppBrowser
   ) {
     this.initializeApp();
   }
@@ -55,5 +52,9 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+  }
+
+  open(){
+    const browser = this.iab.create('https://www.paypal.me/LyonProducerTv');
   }
 }
