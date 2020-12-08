@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig, AdMobFreeRewardVideoConfig } from '@ionic-native/admob-free/ngx';
+//import { AdMobPro } from '@ionic-native/admob-pro/ngx';
 
 @Component({
   selector: 'app-root',
@@ -34,9 +35,9 @@ export class AppComponent implements OnInit {
 
   //CONFIGURACION DEL BANNER
   bannerConfig: AdMobFreeBannerConfig = {
-    isTesting: false, // DURANTE DEL DESARROLLO
+    id: "ca-app-pub-7500717065501456/3925875361",
+    isTesting: true, // DURANTE DEL DESARROLLO
     autoShow: true,
-    id: "ca-app-pub-9590683105158587/6117479342"
   };
 
 
@@ -60,7 +61,8 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private iab: InAppBrowser,
-    private admobFree: AdMobFree
+    public admobFree: AdMobFree,
+    //public admob: AdMobPro
   ) {
     this.initializeApp();
   }
@@ -70,16 +72,29 @@ export class AppComponent implements OnInit {
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
 
-      this.admobFree.banner.config(this.bannerConfig);
+      // this.admobFree.banner.config(this.bannerConfig);
 
-      this.admobFree.banner.prepare().then(() => {
-        console.log('BANNER CARGADO CORRECTAMENTE');
-        this.admobFree.banner.show();
-        console.log("show banner");
-      }).catch(e =>
-        console.log('PROBLEMA CARGANDO BANNER: ', e)
-      );
-      // this.MostrarBanner();
+      // setTimeout(() => {
+        // this.admobFree.banner.prepare().then(() => {
+        //   console.log('BANNER CARGADO CORRECTAMENTE');
+        //   //this.admobFree.banner.show();
+        //   console.log("show banner");
+        // }).catch(e =>
+        //   console.log('PROBLEMA CARGANDO BANNER: ', e)
+        // );
+      // }, 5000);
+      // // this.MostrarBanner();
+
+      // this.admob.createBanner({
+      //   adId: "ca-app-pub-7500717065501456/3925875361",
+      //   isTesting: true // remove in production 
+      // })
+      // .then(() => {
+      //     this.admob.showBanner(this.admob.AD_POSITION.BOTTOM_CENTER);
+      // })
+      //   .catch((err) => {
+      //     console.log(err);
+      // });
 
     });
   }

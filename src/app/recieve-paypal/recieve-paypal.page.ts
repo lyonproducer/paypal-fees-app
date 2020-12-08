@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
 
 @Component({
   selector: 'app-recieve-paypal',
@@ -12,13 +13,30 @@ export class RecievePaypalPage implements OnInit {
   percentage:number= 5.4;
   feeFixed:number = 0.30
 
-  toRecieve:any=0;
+  toRecieve:any=null;
   toSend:any = 0;
   comission:any=0;
 
-  constructor() { }
+  constructor(public admobFree:AdMobFree) { }
 
   ngOnInit() {
+    const bannerConfig: AdMobFreeBannerConfig = {
+      // add your config here
+      // for the sake of this example we will just use the test config
+      id: "ca-app-pub-7500717065501456/3925875361",
+      isTesting: false,
+      autoShow: true
+    };
+
+    this.admobFree.banner.config(bannerConfig);
+     
+    this.admobFree.banner.prepare()
+    .then(() => {
+      console.log("really works");
+      // banner Ad is ready
+      // if we set autoShow to false, then we will need to call the show method here
+    })
+    .catch(e => console.log(e));
   }
 
 
@@ -53,7 +71,7 @@ export class RecievePaypalPage implements OnInit {
     this.comission = (this.toSend - this.toRecieve).toFixed(2);
 
     if(this.toRecieve == null || this.toRecieve == 0){
-      this.toRecieve = 0;
+      this.toRecieve = null;
       this.toSend = 0;
       this.comission = 0;
     }

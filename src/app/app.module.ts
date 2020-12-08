@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AdMobFree } from '@ionic-native/admob-free/ngx';
+//import { AdMobPro } from '@ionic-native/admob-pro/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import { AdMobFree } from '@ionic-native/admob-free/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     InAppBrowser,
-    AdMobFree
+    AdMobFree,
+    //AdMobPro
   ],
   bootstrap: [AppComponent]
 })
