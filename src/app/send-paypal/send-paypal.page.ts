@@ -25,7 +25,7 @@ export class SendPaypalPage implements OnInit {
       // add your config here
       // for the sake of this example we will just use the test config
       id: "ca-app-pub-7500717065501456/3925875361",
-      isTesting: false,
+      //isTesting: true,
       autoShow: true
     };
 

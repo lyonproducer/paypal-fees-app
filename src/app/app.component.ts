@@ -36,20 +36,20 @@ export class AppComponent implements OnInit {
   //CONFIGURACION DEL BANNER
   bannerConfig: AdMobFreeBannerConfig = {
     id: "ca-app-pub-7500717065501456/3925875361",
-    isTesting: true, // DURANTE DEL DESARROLLO
+    //isTesting: true, // DURANTE DEL DESARROLLO
     autoShow: true,
   };
 
 
   //CONFIGURACION DEL INTERSTITIAL
   interstitialConfig: AdMobFreeInterstitialConfig = {
-    isTesting: true, // DURANTE DEL DESARROLLO
+    //isTesting: true, // DURANTE DEL DESARROLLO
     autoShow: false,
     //id: "ID GENERADO EN ADMOB ca-app-pub"
   };
   //CONFIGURACION DEL REWARD VIDEO.
   RewardVideoConfig: AdMobFreeRewardVideoConfig = {
-    isTesting: true, // DURANTE DEL DESARROLLO
+    //isTesting: true, // DURANTE DEL DESARROLLO
     autoShow: false//,
     //id: "ID GENERADO EN ADMOB ca-app-pub"
   };
